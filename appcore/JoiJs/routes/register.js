@@ -13,11 +13,11 @@ const userSchema = Joi.object().keys({
     confirm: Joi.any().valid(Joi.ref('password')).required()
 });
 
-router.get('/register', (req, res) => {
+router.get('/', (req, res) => {
     res.render('register');
 })
 
-router.post('/register', async (req, res) => {
+router.post('/', async (req, res) => {
   
     const result = userSchema.validate(req.body);
     
